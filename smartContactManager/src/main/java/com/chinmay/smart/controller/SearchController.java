@@ -30,7 +30,7 @@ public class SearchController {
 	{
 		User user = this.userRepository.getUserByUserName(principal.getName());
 		//principal.getName() will get name of logged in user
-		
+		//Principal principal: This represents the currently authenticated user. The Principal object typically contains the username or other identifying information about the logged-in user.
 		List<Contact>contacts = this.contactRepository.findByNameContainingAndUser(query, user);
 		
 		return ResponseEntity.ok(contacts);
